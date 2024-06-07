@@ -67,6 +67,15 @@ const navCategory = [
 
 const Nav = () => {
     const [mobileNav, setShowMobileNav] = useState(false);
+    const [firstName, setFirstName] = useState('');
+
+    useEffect(() => {
+        const user = localStorage.getItem('user');
+        if (user) {
+            const { firstName } = JSON.parse(user);
+            setFirstName(firstName.charAt(0).toUpperCase() + firstName.slice(1));
+        }
+    }, []);
     
     useEffect(() => {
         if (mobileNav) {
@@ -107,6 +116,8 @@ const Nav = () => {
                     </div>
                     
                     <div className="flex gap-3 items-center">
+                        <p className="lg:hidden md:hidden flex">Hi, {firstName ? firstName : 'User'}
+                        </p>
                         <CiHeart className="w-4 h-4 cursor-pointer"/>
                         <a href="/profile"><CgProfile className="w-4 h-4 cursor-pointer"/></a>
                         <a href="/cart"><HiOutlineShoppingBag className="w-4 h-4 cursor-pointer"/></a>
@@ -120,7 +131,7 @@ const Nav = () => {
                     <p className="text-white font-bold text-am">All Departments</p>
                 </div>
                 
-                <div className="flex gap-2">
+                <div className="flex gap-2 items-center">
                     <div className="flex items-center gap-2">
                     <Menu as="div" className="relative inline-block text-left">
                                 
@@ -348,6 +359,8 @@ const Nav = () => {
                     </Transition>
                     </Menu>    
                     </div>
+                    <p className="lg:flex md:flex hidden">Hi, {firstName ? firstName : 'User'}
+                    </p>
                 </div>
             </div>
         </div>

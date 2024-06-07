@@ -17,6 +17,8 @@ import Seller from './components/Seller/Seller';
 import Goods from './components/Goods/Goods';
 import Services from './components/Services/Services';
 import AdminDashboard from './components/Admin-Dashboard/AdminDashboard';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
