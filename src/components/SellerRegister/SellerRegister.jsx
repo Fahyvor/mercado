@@ -1,4 +1,21 @@
 import UpdateImage from '../../assets/update-profile.svg'
+const busStops = [
+    {
+        name: "Area 10"
+    },
+    {
+        name: "Barracks"
+    },
+    {
+        name: "Bridge After Zone 3"
+    },
+    {
+        name: "Zone"
+    },
+    {
+        name: "NNPC"
+    }
+]
 const SellerRegister = () => {
 
 
